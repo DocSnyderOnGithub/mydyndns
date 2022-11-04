@@ -43,21 +43,7 @@ Step 3.1: Create a new Lambda function
     Under “Existing role” choose the role you created in Step 1
     Click “Create function”.
 
-Step 3.2: Add a Trigger
-
-    In the “Designer” component select “Add trigger”
-    Under “Select a trigger”, select “API Gateway” (it should be the first in the list).
-    Under “API”, select “Create a new API”
-    Under “Security” select “Open”
-    Click “Add”
-
-Step 3.3: Copy your function’s API endpoint
-
-    You should now be back at your function screen. If not, go to Lambda > Functions > Function-Name
-    Click on “API Gateway”
-    Scroll down to the bottom and copy your “API endpoint”, you’ll need this later.
-
-Step 3.4: Add your function’s code
+Step 3.2: Add your function’s code
 
     At the top of your functions page select the function name
     The code editor should appear, scroll down and add code from “index.js”
@@ -70,7 +56,27 @@ Step 3.4: Add your function’s code
     “HOSTNAME” – Choose host name.
     At the top of the page, click “Save”
 
-Step 4: Configure Custom DDNS Provider in Router / whatever client
+Step 4: Either add "Function URL" (new in 2022) or API Gateway
+
+Step 4a (URL):
+    Click add "Funtion URL" in Lambda
+    
+Step 4b (Gateway): 
+    Add a Trigger
+
+    In the “Designer” component select “Add trigger”
+    Under “Select a trigger”, select “API Gateway” (it should be the first in the list).
+    Under “API”, select “Create a new API”
+    Under “Security” select “Open”
+    Click “Add”
+
+    Copy your function’s API endpoint
+
+    You should now be back at your function screen. If not, go to Lambda > Functions > Function-Name
+    Click on “API Gateway”
+    Scroll down to the bottom and copy your “API endpoint”, you’ll need this later.
+
+Step 5: Configure Custom DDNS Provider in Router / whatever client
 
     Under Query URL paste in your “API endpoint” from Step 3.3
     Add the following query params to the end of the “API endpoint” URI:
